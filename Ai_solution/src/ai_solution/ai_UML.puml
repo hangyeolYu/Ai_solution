@@ -1,0 +1,31 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+Example  -->void형_출력함수 :호출
+void형_출력함수 -->Example:void 형 반환
+Example <--> Standard_super:@Override 입출력
+group extend class or
+  Standard_super ->ideal_likely_defect : 상속된 클래스들(@Override 받는다)
+  Standard_super -> Customer:상속된 클래스 (추가로 mail 변수를 가진다)
+end
+
+Example -->ideal_likely_defect :고객 정보 기준을 넣어둔다
+Example<-->Customer:고객 정보들의 종류를 넣어둔다
+group ArrayList<Customer>
+ list->Customer:기준을 삼는다
+end
+Example-->list:   고객정보를 넣는다
+group ArrayList<deal_likely_defect_List>
+list-->Example :받은 고객 정보를 검색 호출한다
+Example-->list:받은 기준으로 데이터 이동 명령을 한다
+list->ideal_likely_defect_List:받은 기준으로 나눠서 대입한다
+end
+group Naver,GmailList<Customer>
+    Example-->Example:static 에 설정된 비밀번호를 요청한다
+  Example-->list:이메일 기준의 형식을 요청한다
+  naver_gamil_List <--list:고객정보을 받는다
+  naver_gamil_List-->Example:나눈 고객 데이터를 돌려받아 보낸다
+ end
+@enduml
